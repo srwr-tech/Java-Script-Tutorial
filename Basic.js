@@ -33,7 +33,10 @@
                     // console.log(str.concat(" " +arr))
                     // console.log(str+ " "+arr);
 
-
+//Math.floor give lower inter value (1.6=>1 ,1.9=>1)
+//Math.random gives you randow value in decimal also
+                //     let sum=Math.floor(Math.random()*10 )
+                //     console.log(sum);
 // conditional statement                
                     // let x=9
                     // if (x==10) {
@@ -138,7 +141,7 @@
 
     
 
-                        // let frnd=["sarwar","srwr","alam","md"];
+                         let frnd=["sarwar","srwr","alam","md"];
         // for each loop
 
                         // frnd.forEach(function (str) {
@@ -158,15 +161,15 @@
                         // })
                         // sarwar.forEach(str=>console.log(str.name))
         // for off       
-                        // for (str of frnd){
-                        // console.log(str);
-                        //      }
+                        for (str of frnd){
+                        console.log(str);
+                             }
 
         // for in loop   ==> for in loop mostly used in object
 
-                        // for(let index in frnd){
-                        //     console.log(frnd[index]);
-                        // }
+                        for(let index in frnd){
+                            console.log(frnd[index]);
+                        }
          
         // while loop
                         // let i=0;

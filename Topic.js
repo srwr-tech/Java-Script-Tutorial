@@ -31,10 +31,10 @@
 
                         // const x=()=>
                         // console.log("Hello, I am first order");
-                        // const y=>(return x)=> return x();
+                        // const y=(returnx)=> returnx();
                         // y(x);   
 
-                        // Call Back function
+// Call Back function
     
                         // function fun1 (name){
                         //     console.log("Hello " + name);}
@@ -71,8 +71,17 @@
                         //     console.log(error);}
                         // prom(true).then(onfulfillment).catch (onRejection);  
 
+
+// Async & Await
+
+                        
+
+
+
+
 // API
-                        //     fetch ("https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8").then((response)=>response.json())
+                        //     fetch ("https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8")
+                        //     .then((response)=>response.json())
                         //     .then((data)=>{console.log(data);
                         //     for(var x in data){
                         //         document.write(`${data[x].name}- <br> <br> ${data[x].city} <br>`);}})
@@ -176,12 +185,22 @@
                         //     first_name:"Md Sarwar",
                         //     last_name:"Ali"
                         // }
-// Call            
-                        //printobj.call(name1,"27","mumbai");
+
+
+        // Call         Call method used to borrow a function from other object and use the data of other object  
+                          
+                            //printobj.call(name1,"27","mumbai");
                     
+
         // Apply
-                         //  printobj.apply(name2,["27","mumbai"])
-        // Bind
+                        // It is same as call method oly difference is instead of passing argument indivisually in call method
+                        // in apply method we pass these argunment in array list;
+
+                            //   printobj.apply(name1,["27","mumbai"])
+        // Bind     
+                        // Bind method does not directly invoked method but gives you a copy of the exactly same    method which can be invoked later.
+                        
+
                         // let mybind=printobj.bind(name2,"mumbai","25");
                         // mybind(); // need to call function in bind                    
 
@@ -192,7 +211,7 @@
                         //         time_out=setTimeout(sarwar,5000, "alam", "5");
                         //         console.log(time_out); // it will provide setTime out Id
                         // interval_Id= setInterval(sarwar,3000,"Sarwar","5"); // print same o/p contineously
-              // clearInterval(interval_Id) // when you want to clear interval means stop interval time
+                        // clearInterval(interval_Id) // when you want to clear interval means stop interval time
 
 
 // Event Bubbling

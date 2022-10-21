@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container{
+            text-align: center;
+            color: blue;
+            border-radius: 2px;
+            border: 40px solid black;
+        } */
+        /* #box{
+            border: 400px solid black;
+            text-align: center;
+            border: 10px;
+            border-radius: 2px;
+        } */
+    </style>
+</head>
+<body>
+   <div id="cont">Hello DOM manupulation</div>
+    <div class="box">This is again</div>
+
+    <script>
+    //     const domini=document.getElementById('cont')
+    //    let again= domini.textContent;
+    //     console.log(again);
+    //     let sum = domini.innerHTML
+    //     console.log(sum); 
+    //     console.log(innerHTML);     
+                    
+   
+            // function getAge() {
+            // 'use strict';
+            // let age = 21;
+            // console.log(age);
+            // }
+
+            // getAge();
+
+
+            //     let num1 ={
+            //         first_name:"Sarwar",
+            //         last_name:" Alam",
+            //         roll_no:" 27"
+            //     }
+            //     let num2={
+            //         first_name:" alam",
+            //         last_name:" Sarwar",
+            //         roll_no:" 22"
+            //     }
+
+            //         let printh= function (age,number) {
+            //             console.log(this.first_name+this.last_name+this.roll_no+age+number);
+                        
+            //         }
+            //         let bind_2=printh.bind(num2," 29 "," 8826723848 ")
+            // bind_2();
+
+
+
+            function fun1(name,roll_no){
+                                console.log("hello " + name +" "+roll_no);}
+                                time_out=setTimeout(fun1,5000, "alam", "5");
+                                console.log(time_out); // it will provide setTime out Id
+                                interval_Id= setInterval(fun1,2000,"Sarwar","8"); // print same o/p contineously
+                                //console.log(interval_Id);
+                                if(interval_Id<5){
+                                clearInterval(interval_Id)} // when you want to clear interval means stop interval time
+    
+
+                            //     function sarwa(num,age){
+                            //         console.log(`your name is ${num},and roll no :${age}`);
+                            //     }
+                            //     let timer=setTimeout(sarwa ,5000,"Sarwar",26)
+                            //   let  inter_id=setInterval(sarwa,3000,"alam",20)
+                              
+                                
+
+    </script>
+</body>
+</html>
