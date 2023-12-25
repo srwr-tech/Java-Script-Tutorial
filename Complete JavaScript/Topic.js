@@ -2,10 +2,12 @@
 
                         // sum(3,5);   
                         // function sum(a,b){
-                        //      sum=a+b;
-                        //     console.log(sum);
+                        //      add=a+b;
+                        //     console.log(add);
                         // }
-    
+                        
+
+                      
 // Clouser
                         // const outer_fun=(a)=>{
                         //     let b=10;
@@ -29,10 +31,16 @@
 
  // Higher order function
 
-                        // const x=()=>
-                        // console.log("Hello, I am first order");
-                        // const y=(returnx)=> returnx();
-                        // y(x);   
+                        function multiplyBy(factor) {
+                            return function (num) {
+                            return num * factor;
+                            };
+                        }
+                        
+                        // Create a function that multiplies by 5
+                        const multiplyBy5 = multiplyBy(5);  
+                        console.log(multiplyBy5(6));
+                        
 
 // Call Back function
     
@@ -74,6 +82,32 @@
 
 // Async & Await
 
+
+                        // function prom(complete) {
+                        //     return new Promise(function(resolve, reject) {
+                        //     console.log("fetching data, Pls wait");
+                        //     setTimeout(() => {
+                        //         if (complete) {
+                        //         resolve("i am successful");
+                        //         } else {
+                        //         reject("I am failed");
+                        //         }
+                        //     }, 3000)
+                        //     });
+                        // }
+                        
+                        // async function fetchData() {
+                        //     try {
+                        //     const result = await prom(true);
+                        //     console.log(result);
+                        //     }
+                        //    catch (error) {
+                        //     console.log(error);
+                        //     }
+                        // }
+                        
+                        // fetchData();
+  
                         
 
 
@@ -186,19 +220,20 @@
                         //     last_name:"Ali"
                         // }
 
-
         // Call         Call method used to borrow a function from other object and use the data of other object  
                           
-                            //printobj.call(name1,"27","mumbai");
+                            // printobj.call(name1,"27","mumbai");
                     
 
         // Apply
-                        // It is same as call method oly difference is instead of passing argument indivisually in call method
+                        // It is same as call method oly difference is instead of passing argument 
+                        //indivisually in call method
                         // in apply method we pass these argunment in array list;
 
                             //   printobj.apply(name1,["27","mumbai"])
         // Bind     
-                        // Bind method does not directly invoked method but gives you a copy of the exactly same    method which can be invoked later.
+                        // Bind method does not directly invoked method but gives you a
+                        // copy of the exactly same    method which can be invoked later.
                         
 
                         // let mybind=printobj.bind(name2,"mumbai","25");
@@ -209,10 +244,145 @@
                         // function sarwar(name,roll_no){
                         //         console.log("hello " + name +" "+roll_no);}
                         //         time_out=setTimeout(sarwar,5000, "alam", "5");
-                        //         console.log(time_out); // it will provide setTime out Id
-                        // interval_Id= setInterval(sarwar,3000,"Sarwar","5"); // print same o/p contineously
-                        // clearInterval(interval_Id) // when you want to clear interval means stop interval time
+                        //         console.log(time_out);                               // it will provide setTime out Id
+                        // interval_Id= setInterval(sarwar,3000,"Sarwar","5");          // print same o/p contineously
+                        // clearInterval(interval_Id)                                   // when you want to clear interval means stop interval time
 
+        // Memoization
+
+                        // let sum=0;
+                        // const clac=(n)=>{
+                        //     for(let i=0;i<=n;i++){
+                        //         sum+=i;}
+                        //         return sum;}
+                        // const memoize =(fun)=>{
+                        //     let cache={};
+                        //     return function (...args){
+                        //         let n=args[0];
+                        //         if (n in cache){
+                        //             console.log("cache");
+                        //             return cache[n];}
+                        //         else {
+                        //             console.log("calculating first time");
+                        //             let result=fun(n);
+                        //             cache[n]=result
+                        //             return result;    
+                        //             }}}
+                        //     console.time();
+                        //     const efficient=memoize(clac);
+                        //     console.log(efficient(5));
+                        //     console.timeEnd();
+
+                        //     console.time();
+                        //     console.log(efficient(5));
+                        //     console.timeEnd();
+
+        //Debouncing
+                        // <body>
+                        //     <input type="text" onkeyUp="betterfunction ()" />
+                        
+                        // </body>
+                        // let counter=0;
+                        // const getdata=()=>{
+                        //    console.log("fetching data "+ counter++);
+                        // }
+                        // function debounce(fn,delay){
+                        //    let timer;
+                        //    return function (){
+                        //        if(timer) clearTimeout(timer);
+                        //       timer= setTimeout(()=>{
+                        //                fn();
+                        //            },delay)
+                        //        }}    
+                        //    const betterfunction=debounce(getdata,500); 
+        //Throatling
+        // <body>
+        //                 <input type="text" onchange="betterfunction"/>
+        //                 <button id="myid" onclick="newfun()">Click me</button>
+
+        //<script>
+
+                        function mythroat(fn, delay) {
+    return function () {
+        document.getElementById("myid").disabled = true;
+        setTimeout(() => {
+            fn();
+        }, delay);
+    };
+}
+                        const newfun=mythroat(()=>{
+                            document.getElementById("myid").disabled=false
+                            console.log("user Clicked");
+                        },3000);
+
+        // </script>
+        // </body>
+
+
+        // Rest Parameter
+            
+                                //     function sum (...sum1){
+                                //         console.log(sum1);
+                                //     }
+                                //     sum(1,2,3,5,6,7,8,9) // you can add as mamy as value
+                                        // function sum(...total){
+                                        //     let result=0
+                                        //     for(let i=0;i<total.length;i++){
+                                        //     result+=total[i];}
+                                        //     console.log(result);
+                                        //     }            
+                                        //     sum(2,8)
+
+            
+        // Spread operator
+
+                            // let [myvar1,myvar2,...newArray]=var1
+                            // console.log(myvar1);
+                            // console.log(myvar2);
+                            // console.log(newArray);       
+                    
+
+        // Map function  
+            //map function is use to transform an array by creating new array.
+
+                    // const arr=[3,5,3,2,5] 
+                    // function double(number){
+                    //     return number*2;
+                    // }      
+                    // const output=arr.map(double);
+                    // console.log(output);
+                 
+                //or
+                        
+                    // console.log("sarawr");
+                    // const sarwar=[
+                    //     {name:"sarwar", age:"27", gender:"male"},
+                    //     {name:"alam", age:"28", gender:"female"},
+                    //     {name:"Md", age:"29", gender:"male"},
+                    //     {name:"srwr", age:"30", gender:"male"}
+                    //              ]     
+                    // const username=sarwar.map((str)=>{
+                    // return str.name;})
+                    // console.log(username); 
+        // filter
+            // it create a new array by removing element that not belongs to.
+
+
+                    // const arr=[3,5,3,2,5] 
+                    // function double(number){
+                    //     return number>4;  // only change return condition and .filter
+                    // }      
+                    // const output=arr.filter(double);
+                    // console.log(output) ;
+
+        // Reduce 
+            // it takes all element in an array and reduce them into a single value
+
+                    const arr=[3,5,3,2,5]
+                    const output=arr.reduce(function (acc,curr){
+                     acc=acc*curr;
+                     return acc;},0)
+                    console.log(output);
 
 // Event Bubbling
                         // <title>Document</title>
@@ -222,7 +392,7 @@
                         //         padding: 100px;
                         //     }
                         //     #myDiv{
-                        //         padding: 50px;
+                        //         padding: 50px ;
                         //         background-color: blue;
                         //     }
                         // </style>

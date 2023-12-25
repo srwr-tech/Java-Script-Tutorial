@@ -6,7 +6,7 @@
                 
     
 //to Upper Case
-
+                
                 // console.log(str.toUpperCase());
 
 //to lower case
@@ -14,18 +14,24 @@
                 // console.log(str.toLowerCase());
 
 //Slice
-                // it will use to remove element from array .slice(2,4) it means first element is indicate starting of removed elemet and second element indicate till that element will remove
-    
+                // The slice() method returns selected elements in an array, as a new array.                
+                //The slice() method selects from a given start, up to a (not inclusive) given end.
+                //The slice() method does not change the original array.
+
+
                 //  let arr=["mango","apple","banana","pineapple"]
                 // console.log(arr.slice(1,3));
                 // let bbw=arr.substring(1,3)
                 // console.log(bbw);
 
 // Splice
+                // The splice() method adds and/or removes array elements.
+
+                // The splice() method overwrites the original array.
 
                 // let arr1=["sonu","monu","titu","pillu"]
-                // console.log(arr1.splice(1,3))
-
+                // console.log(arr1.splice(1,3,"test"))
+                //                          (position for add & delete both,how many element remove, add element)
 //concat
                     // let str="sarwar"
                     // let arr="alam"
@@ -34,9 +40,13 @@
                     // console.log(str+ " "+arr);
 
 //Math.floor give lower inter value (1.6=>1 ,1.9=>1)
+
+
 //Math.random gives you randow value in decimal also
                 //     let sum=Math.floor(Math.random()*10 )
                 //     console.log(sum);
+
+
 // conditional statement                
                     // let x=9
                     // if (x==10) {
@@ -109,16 +119,16 @@
 // CharAt
     
                         // let arr="sarwar"
-                        // let neww=arr.charAt(2);
+                        // let neww=arr.charAt();
                         // console.log(neww);
            
 // IndexOf      // first occurance of substring                
-                        // var str= "this is a q q string"
-                        // var position=str.indexOf("q")
-                        // console.log(position);
-                        // last occurance of substring 
-                        // var occ=str.lastIndexOf("q")
-                        // console.log(occ);               
+                //         var str= "this is a q q string"
+                //         var position=str.indexOf("q")
+                //         console.log(position);
+                //       //  last occurance of substring 
+                //         var occ=str.lastIndexOf("q")
+                //         console.log(occ);               
 // fill method
 
                         // let arr=[1,4,5,7,8,5] 
@@ -128,7 +138,12 @@
                         // let arr=[2,3,4,6,7,8,9]
                         // let brr=arr.splice(1,3) // starting of index, till delete index
                         // console.log(brr); // 3,4,6 is available other deleted
-                
+
+ // To create new array from other array
+        // 1st method using slice method
+                        
+                        // let newarr=var1.slice(1,4)
+                        // console.log(newarr);               
 
 // Loop 
 
@@ -141,7 +156,7 @@
 
     
 
-                         let frnd=["sarwar","srwr","alam","md"];
+                        //  let frnd=["sarwar","srwr","alam","md"];
         // for each loop
 
                         // frnd.forEach(function (str) {
@@ -161,15 +176,15 @@
                         // })
                         // sarwar.forEach(str=>console.log(str.name))
         // for off       
-                        for (str of frnd){
-                        console.log(str);
-                             }
+                        // for (str of frnd){
+                        // console.log(str);
+                        //      }
 
         // for in loop   ==> for in loop mostly used in object
 
-                        for(let index in frnd){
-                            console.log(frnd[index]);
-                        }
+                        // for(let index in frnd){
+                        //     console.log(frnd[index]);
+                        // }
          
         // while loop
                         // let i=0;
@@ -196,18 +211,6 @@
                         // console.log(mynew1);
                         // console.log(mynew2);
 
-        // To create new array from other array
-        // 1st method using slice method
-                        
-                        // let newarr=var1.slice(1,4)
-                        // console.log(newarr);
-        
-// Spread operator
-
-                        // let [myvar1,myvar2,...newArray]=var1
-                        // console.log(myvar1);
-                        // console.log(myvar2);
-                        // console.log(newArray);
 
 // Object destructuring
 
@@ -233,62 +236,7 @@
                         // }
                         // console.log(sum(11))
 
-// Rest Parameter
-    
-                            // function sum (...sum1){
-                            //     console.log(sum1);
-                            // }
-                            // sum(1,2,3,5,6,7) // you can add as mamy as value
-            // function sum(...total){
-            // let result=0
-            // for(let i=0;i<total.length;i++){
-            // result+=total[i];}
-            // console.log(result);
-            // }            
-            // sum(2,8)
 
-       
-                
-
-// Map function  
-         //map function is use to transform an array by creating new array.
-
-                // const arr=[3,5,3,2,5] 
-                // function double(number){
-                //     return number*2;
-                // }      
-                // const output=arr.map(double);
-                // console.log(output) ;
-            
-            //or
-                // const sarwar=[
-                //     {name:"sarwar", age:"27", gender:"male"},
-                //     {name:"alam", age:"28", gender:"female"},
-                //     {name:"Md", age:"29", gender:"male"},
-                //     {name:"srwr", age:"30", gender:"male"}
-                // ]     
-                // const username=sarwar.map((str)=>{
-                // return str.name;})
-                // console.log(username); 
-// filter
-        // it create a new array by removing element that not belongs to.
-
-
-                // const arr=[3,5,3,2,5] 
-                // function double(number){
-                //     return number>4;  // only change return condition and .filter
-                // }      
-                // const output=arr.filter(double);
-                // console.log(output) ;
-
-// Reduce 
-        // it takes all element in an array and reduce them into a single value
-
-                // const arr=[3,5,3,2,5]
-                // const output=arr.reduce(function (acc,curr){
-                //  acc=acc*curr;
-                //  return acc;},0)
-                // console.log(output);
 
 //  delete Unique or duplicate value
 
@@ -345,9 +293,9 @@
                 // var emp_details_shallowcopy=emp_details;                
 
 // IIFE
-                    // (function(){
-                    //     var name="sarwar"
-                    //     console.log("my name is " + name);
-                    // })()
+//                     (function(){
+//                         var name="sarwar"
+//                         console.log("my name is " + name);
+//                     })()
         
          
