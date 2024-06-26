@@ -299,3 +299,102 @@
 //                     })()
         
          
+
+        // Rest Parameter
+            
+                                //     function sum (...sum1){
+                                //         console.log(sum1);
+                                //     }
+                                //     sum(1,2,3,5,6,7,8,9) // you can add as mamy as value
+                                        // function sum(...total){
+                                        //     let result=0
+                                        //     for(let i=0;i<total.length;i++){
+                                        //     result+=total[i];}
+                                        //     console.log(result);
+                                        //     }            
+                                        //     sum(2,8)
+
+            
+        // Spread operator
+
+                            // let [myvar1,myvar2,...newArray]=var1
+                            // console.log(myvar1);
+                            // console.log(myvar2);
+                            // console.log(newArray);       
+                    
+
+        // Map function  
+            //map function is use to transform an array by creating new array.
+
+                    // const arr=[3,5,3,2,5] 
+                    // function double(number){
+                    //     return number*2;
+                    // }      
+                    // const output=arr.map(double);
+                    // console.log(output);
+                 
+                //or
+                        
+                    // console.log("sarawr");
+                    // const sarwar=[
+                    //     {name:"sarwar", age:"27", gender:"male"},
+                    //     {name:"alam", age:"28", gender:"female"},
+                    //     {name:"Md", age:"29", gender:"male"},
+                    //     {name:"srwr", age:"30", gender:"male"}
+                    //              ]     
+                    // const username=sarwar.map((str)=>{
+                    // return str.name;})
+                    // console.log(username); 
+        // filter
+            // it create a new array by removing element that not belongs to.
+
+
+                    // const arr=[3,5,3,2,5] 
+                    // function double(number){
+                    //     return number>4;  // only change return condition and .filter
+                    // }      
+                    // const output=arr.filter(double);
+                    // console.log(output) ;
+
+        // Reduce 
+            // it takes all element in an array and reduce them into a single value
+
+                    // const arr=[3,5,3,2,5]
+                    // const output=arr.reduce(function (acc,curr){
+                    //  acc=acc*curr;
+                    //  return acc;},0)
+                    // console.log(output);
+
+
+        
+// call,bind & Apply
+        //                 let name1={
+        //                     first_name:"Sarwar",
+        //                     last_name:"alam"
+        //                 }
+        //                 let printobj=function(age,city){
+        //                     console.log(this.first_name + " "+ this.last_name,age,city);
+        //                 }
+        //                 let name2={
+        //                     first_name:"Md Sarwar",
+        //                     last_name:"Ali"
+        //                 }
+
+        // Call         Call method used to borrow a function from other object and use the data of other object  
+                          
+        //                     printobj.call(name1,"27","mumbai");
+                    
+
+        // Apply
+        //                 It is same as call method oly difference is instead of passing argument 
+        //                 indivisually in call method
+        //                 in apply method we pass these argunment in array list;
+
+        //                       printobj.apply(name1,["27","mumbai"])
+        // Bind     
+        //                 Bind method does not directly invoked method but gives you a
+        //                 copy of the exactly same    method which can be invoked later.
+                        
+
+        //                 let mybind=printobj.bind(name2,"mumbai","25");
+        //                 mybind(); // need to call function in bind                 

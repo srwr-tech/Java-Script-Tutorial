@@ -31,15 +31,15 @@
 
  // Higher order function
 
-                        function multiplyBy(factor) {
-                            return function (num) {
-                            return num * factor;
-                            };
-                        }
+                        // function multiplyBy(factor) {
+                        //     return function (num) {
+                        //     return num * factor;
+                        //     };
+                        // }
                         
-                        // Create a function that multiplies by 5
-                        const multiplyBy5 = multiplyBy(5);  
-                        console.log(multiplyBy5(6));
+                        // // Create a function that multiplies by 5
+                        // const multiplyBy5 = multiplyBy(5);  
+                        // console.log(multiplyBy5(6));
                         
 
 // Call Back function
@@ -83,36 +83,62 @@
 // Async & Await
 
 
-                        // function prom(complete) {
-                        //     return new Promise(function(resolve, reject) {
-                        //     console.log("fetching data, Pls wait");
-                        //     setTimeout(() => {
-                        //         if (complete) {
-                        //         resolve("i am successful");
-                        //         } else {
-                        //         reject("I am failed");
-                        //         }
-                        //     }, 3000)
-                        //     });
-                        // }
+                        function prom(complete) {
+                            return new Promise(function(resolve, reject) {
+                            console.log("fetching data, Pls wait");
+                            setTimeout(() => {
+                                if (complete) {
+                                resolve("i am successful");
+                                } else {
+                                reject("I am failed");
+                                }
+                            }, 3000)
+                            });
+                        }
                         
-                        // async function fetchData() {
-                        //     try {
-                        //     const result = await prom(true);
-                        //     console.log(result);
-                        //     }
-                        //    catch (error) {
-                        //     console.log(error);
-                        //     }
-                        // }
+                        async function fetchData() {
+                            try {
+                            const result = await prom(true);
+                            console.log(result);
+                            }
+                           catch (error) {
+                            console.log(error);
+                            }
+                        }
                         
-                        // fetchData();
-  
+                        fetchData();
+
+                        //second method
+                        async function fetchProducts() {
+                            try {
+                                const response = await fetch('https://fakestoreapi.com/products');
+                                if (!response.ok) {
+                                    throw new Error('Failed to fetch data');
+                                }
+                                return await response.json();
+                            } catch (error) {
+                                console.error('Error fetching data:', error);
+                                throw error;
+                            }
+                        }
                         
-
-
-
-
+                        // Fetch data and handle errors
+                        async function fetchData() {
+                            try {
+                                console.log("Fetching data, please wait...");
+                                const products = await fetchProducts();
+                                console.log('Fetched products:', products);
+                                console.log('Data fetched successfully');
+                                return products;
+                            } catch (error) {
+                                console.error('Error fetching data:', error);
+                                throw error;
+                            }
+                        }
+                        
+                        // Call fetchData function to fetch products from the API
+                        fetchData();
+                        
 // API
                         //     fetch ("https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8")
                         //     .then((response)=>response.json())
@@ -206,38 +232,7 @@
                         // </script>
   
 
-
-// call,bind & Apply
-                        // let name1={
-                        //     first_name:"Sarwar",
-                        //     last_name:"alam"
-                        // }
-                        // let printobj=function(age,city){
-                        //     console.log(this.first_name + " "+ this.last_name,age,city);
-                        // }
-                        // let name2={
-                        //     first_name:"Md Sarwar",
-                        //     last_name:"Ali"
-                        // }
-
-        // Call         Call method used to borrow a function from other object and use the data of other object  
-                          
-                            // printobj.call(name1,"27","mumbai");
-                    
-
-        // Apply
-                        // It is same as call method oly difference is instead of passing argument 
-                        //indivisually in call method
-                        // in apply method we pass these argunment in array list;
-
-                            //   printobj.apply(name1,["27","mumbai"])
-        // Bind     
-                        // Bind method does not directly invoked method but gives you a
-                        // copy of the exactly same    method which can be invoked later.
-                        
-
-                        // let mybind=printobj.bind(name2,"mumbai","25");
-                        // mybind(); // need to call function in bind                    
+               
 
  // setTimeout() and setTime Interval
          
@@ -295,6 +290,8 @@
                         //            },delay)
                         //        }}    
                         //    const betterfunction=debounce(getdata,500); 
+
+
         //Throatling
         // <body>
         //                 <input type="text" onchange="betterfunction"/>
@@ -302,87 +299,22 @@
 
         //<script>
 
-                        function mythroat(fn, delay) {
-    return function () {
-        document.getElementById("myid").disabled = true;
-        setTimeout(() => {
-            fn();
-        }, delay);
-    };
-}
-                        const newfun=mythroat(()=>{
-                            document.getElementById("myid").disabled=false
-                            console.log("user Clicked");
-                        },3000);
+                        // function mythroat(fn, delay) {
+                        //     return function () {
+                        //         document.getElementById("myid").disabled = true;
+                        //         setTimeout(() => {
+                        //             fn();
+                        //         }, delay);
+                        //     };
+                        // }
+                        // const newfun=mythroat(()=>{
+                        //     document.getElementById("myid").disabled=false
+                        //     console.log("user Clicked");
+                        // },3000);
 
         // </script>
         // </body>
 
-
-        // Rest Parameter
-            
-                                //     function sum (...sum1){
-                                //         console.log(sum1);
-                                //     }
-                                //     sum(1,2,3,5,6,7,8,9) // you can add as mamy as value
-                                        // function sum(...total){
-                                        //     let result=0
-                                        //     for(let i=0;i<total.length;i++){
-                                        //     result+=total[i];}
-                                        //     console.log(result);
-                                        //     }            
-                                        //     sum(2,8)
-
-            
-        // Spread operator
-
-                            // let [myvar1,myvar2,...newArray]=var1
-                            // console.log(myvar1);
-                            // console.log(myvar2);
-                            // console.log(newArray);       
-                    
-
-        // Map function  
-            //map function is use to transform an array by creating new array.
-
-                    // const arr=[3,5,3,2,5] 
-                    // function double(number){
-                    //     return number*2;
-                    // }      
-                    // const output=arr.map(double);
-                    // console.log(output);
-                 
-                //or
-                        
-                    // console.log("sarawr");
-                    // const sarwar=[
-                    //     {name:"sarwar", age:"27", gender:"male"},
-                    //     {name:"alam", age:"28", gender:"female"},
-                    //     {name:"Md", age:"29", gender:"male"},
-                    //     {name:"srwr", age:"30", gender:"male"}
-                    //              ]     
-                    // const username=sarwar.map((str)=>{
-                    // return str.name;})
-                    // console.log(username); 
-        // filter
-            // it create a new array by removing element that not belongs to.
-
-
-                    // const arr=[3,5,3,2,5] 
-                    // function double(number){
-                    //     return number>4;  // only change return condition and .filter
-                    // }      
-                    // const output=arr.filter(double);
-                    // console.log(output) ;
-
-        // Reduce 
-            // it takes all element in an array and reduce them into a single value
-
-                    const arr=[3,5,3,2,5]
-                    const output=arr.reduce(function (acc,curr){
-                     acc=acc*curr;
-                     return acc;},0)
-                    console.log(output);
 
 // Event Bubbling
                         // <title>Document</title>

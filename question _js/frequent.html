@@ -8,11 +8,26 @@
 </head>
 <body>
     <script>
-        let arr=[[1,2,3],
-                [7,[2,3,4,5],3,1,[56]]];
-                let arr1=[].concat(...arr)
-        console.log(arr1);
-
+        function prom (complete ){
+            return new Promise (function (resolve,reject){
+                console.log("wait i am fetching data");
+                setTimeout(()=>{
+                    if (complete){
+                        resolve("I am succefll")
+                    }
+                    else {
+                        reject ("I am failed")
+                    }
+                },3000)
+            })
+        }
+        let onfullfilment=(result)=>{
+            console.log(result)
+        }
+        let onreject=(error)=>{
+            console.log(error)
+        }
+        prom(true).then(onfullfilment).catch(onreject);
     </script>
         
 
